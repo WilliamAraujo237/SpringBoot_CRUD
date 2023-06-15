@@ -1,6 +1,7 @@
 package med.voll.api.Medico;
 
 import jakarta.persistence.*;
+import med.voll.api.Endereco.DadosEndereco;
 import med.voll.api.Endereco.Endereco;
 
 import java.util.Objects;
@@ -17,16 +18,17 @@ public class Medico {
     @Enumerated
     private Especialidade especialidade;
     @Embedded
-    private Endereco endereco;
+    private Endereco Endereco;
 
     //Construtor completo e Vazio
-    public Medico (String nome, String email,String crm,Especialidade especialidade,Endereco endereco){
+    public Medico (String nome, String email, String crm, Especialidade especialidade,Endereco endereco){
         super();
         this.nome = nome;
         this.email = email;
         this.crm = crm;
         this.especialidade = especialidade;
-        this.endereco = endereco;
+        this.Endereco = endereco;
+
     }
     public Medico(){
 
@@ -73,11 +75,11 @@ public class Medico {
     }
 
     public Endereco getEndereco() {
-        return endereco;
+        return Endereco;
     }
 
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
+    public void setEndereco(Endereco Endereco) {
+        this.Endereco = Endereco;
     }
 
     //criando HashCode
@@ -102,7 +104,7 @@ public class Medico {
                 ", email='" + email + '\'' +
                 ", crm='" + crm + '\'' +
                 ", especialidade=" + especialidade +
-                ", endereco=" + endereco +
+                ", endereco=" + Endereco +
                 '}';
     }
 }
